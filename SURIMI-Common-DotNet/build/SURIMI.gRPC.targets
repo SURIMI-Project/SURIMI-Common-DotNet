@@ -1,0 +1,25 @@
+<Project>
+    <!-- Debug message: lets you SEE that the file is imported -->
+    <Target Name="_SURIMI_ImportCheck" BeforeTargets="Build">
+        <Message Importance="High" Text=">>> SURIMI.Common.targets imported successfully" />
+    </Target>
+
+    <PropertyGroup>
+        <!-- Path to PowerShell script inside the NuGet package -->
+        <DockerScript>$([System.IO.Path]::Combine('$(MSBuildThisFileDirectory)', '..', 'tools', 'build-push-docker.ps1'))</DockerScript>
+    </PropertyGroup>
+
+    <!-- The target you will call: dotnet build /t:BuildPushDockerImage -->
+    <Target Name="BuildPushDockerImage">
+        <Message Importance="High" Text=">>> Running BuildPushDockerImage target" />
+        <Message Importance="High" Text=">>> Script location: $(DockerScript)" />
+        <Message Importance="High" Text=">>> Working directory: $(ProjectDir)" />
+
+        <!-- Use powershell.exe because pwsh doesn't exist -->
+        <Exec WorkingDirectory="$(ProjectDir)"
+              Command='powershell -NoLogo -NoProfile -ExecutionPolicy Bypass -File "$(DockerScript)"'
+              ConsoleToMSBuild="true"
+              IgnoreStandardErrorWarningFormat="true" />
+
+    </Target>
+</Project>
