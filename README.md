@@ -1,4 +1,3 @@
-# SURIMI Fisheries Authothiority
+# SURIMI Common
 
-The fisheries authority model provides regulations and consumes catches and Fishing Activities. It is used to determine the catch limits for each species and to ensure that the fishing activities are sustainable.
- 
+The SURIMI Common library provides utility functions and services for gRPC applications, including exception handling, validation, and version metadata management.
