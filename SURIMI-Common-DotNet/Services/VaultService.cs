@@ -1,4 +1,5 @@
 ﻿using VaultSharp;
+using VaultSharp.Core;
 
 namespace SURIMI.Common.Services
 {
@@ -26,6 +27,19 @@ namespace SURIMI.Common.Services
                 {
                     Environment.SetEnvironmentVariable(kv.Key, kv.Value.ToString());
                     Console.WriteLine($"Loaded secret '{kv.Key}' from Vault into environment variables.");
+                }
+            }
+            catch (AggregateException ex)
+            {
+                // Check if any inner exception is a VaultApiException with 404
+                var vaultEx = ex.InnerExceptions.OfType<VaultApiException>().FirstOrDefault();
+                if (vaultEx != null && vaultEx.HttpStatusCode == System.Net.HttpStatusCode.NotFound)
+                {
+                    Console.WriteLine($"Secret not found at path '{secretPath}' on {vaultAddr}");
+                }
+                else
+                {
+                    Console.WriteLine($"Error loading secrets from Vault (aggregate): {ex.Message}");
                 }
             }
             catch (Exception ex)
