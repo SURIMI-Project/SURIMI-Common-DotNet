@@ -40,7 +40,7 @@ if ([string]::IsNullOrWhiteSpace($Normalized)) {
 }
 
 # Compose full image name
-$ImageName = "rikkert242/${Normalized}:latest"
+$ImageName = "ghcr.io/official-ewe/${Normalized}:latest"
 Write-Host "Docker image name: '$ImageName'"
 
 # Load auth tokens
