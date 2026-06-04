@@ -80,6 +80,15 @@ if ($LASTEXITCODE -ne 0) {
 
 Write-Host "Image '$ImageName' built successfully."
 
+# Login to GitHub Container Registry
+Write-Host "Logging in to ghcr.io..."
+$githubToken | docker login ghcr.io -u official-ewe --password-stdin
+
+if ($LASTEXITCODE -ne 0) {
+    Write-Error "Docker login failed (exit $LASTEXITCODE)"
+    exit $LASTEXITCODE
+}
+
 # Push Docker image
 Write-Host "Pushing Docker image..."
 
