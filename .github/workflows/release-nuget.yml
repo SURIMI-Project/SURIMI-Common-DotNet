@@ -10,4 +10,4 @@ jobs:
 
     steps:
       - name: Use custom NuGet release action
-        uses: Official-EwE/Eii.GithubActions/ReleaseNuGetPackageNet80@master
+        uses: Official-EwE/Eii.GithubActions/ReleaseNuGetPackageUbuntu@master
