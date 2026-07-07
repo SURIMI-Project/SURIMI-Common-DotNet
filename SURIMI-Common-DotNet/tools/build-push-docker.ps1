@@ -68,8 +68,8 @@ Write-Host "Building Docker image..."
 
 docker build `
     -f $DockerfilePath `
-    --build-arg GITHUB_TOKEN=$githubToken `
-    --build-arg BSR_TOKEN=$bsrToken `
+    --secret id=GITHUB_TOKEN,env=SURIMI_DOCKER_BUILD_GITHUB_TOKEN `
+    --secret id=BSR_TOKEN,env=SURIMI_DOCKER_BUILD_BSR_TOKEN `
     -t $ImageName `
     $SolutionDir
 
