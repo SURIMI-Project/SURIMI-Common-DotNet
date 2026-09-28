@@ -16,7 +16,7 @@
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <RepositoryUrl>https://github.com/Official-EwE/SURIMI-Common-DotNet</RepositoryUrl>
         <PackageReleaseNotes>Initial version</PackageReleaseNotes>
-        <PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
+        <PackageLicenseExpression>EUPL-1.2-or-later</PackageLicenseExpression>
         <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
         <IncludeSymbols>True</IncludeSymbols>
         <IncludeReferencedProjects>True</IncludeReferencedProjects>
