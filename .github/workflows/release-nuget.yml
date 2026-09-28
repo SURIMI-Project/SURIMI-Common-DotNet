@@ -10,4 +10,4 @@ jobs:
 
     steps:
       - name: Use custom NuGet release action
-        uses: Official-EwE/Eii.GithubActions/ReleaseNuGetPackageUbuntu@master
+        uses: SURIMI-Project/Surimi-GithubActions/ReleaseNuGetPackageUbuntu@master
