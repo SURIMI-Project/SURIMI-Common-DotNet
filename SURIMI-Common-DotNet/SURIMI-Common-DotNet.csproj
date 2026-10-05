@@ -12,9 +12,9 @@
         <Authors>EII</Authors>
         <Description>SURIMI Common utils</Description>
         <Title>The SURIMI Common Utils</Title>
-        <PackageProjectUrl>https://github.com/Official-EwE/SURIMI-Common-DotNet</PackageProjectUrl>
+        <PackageProjectUrl>https://github.com/Surimi-project/SURIMI-Common-DotNet</PackageProjectUrl>
         <PackageReadmeFile>README.md</PackageReadmeFile>
-        <RepositoryUrl>https://github.com/Official-EwE/SURIMI-Common-DotNet</RepositoryUrl>
+        <RepositoryUrl>https://github.com/Surimi-project/SURIMI-Common-DotNet</RepositoryUrl>
         <PackageReleaseNotes>Initial version</PackageReleaseNotes>
         <PackageLicenseExpression>EUPL-1.2</PackageLicenseExpression>
         <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>

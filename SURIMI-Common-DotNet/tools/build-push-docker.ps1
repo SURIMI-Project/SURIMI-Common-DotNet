@@ -40,7 +40,7 @@ if ([string]::IsNullOrWhiteSpace($Normalized)) {
 }
 
 # Compose full image name
-$ImageName = "ghcr.io/official-ewe/${Normalized}:latest"
+$ImageName = "ghcr.io/surimi-project/${Normalized}:latest"
 Write-Host "Docker image name: '$ImageName'"
 
 # Load auth tokens
@@ -82,7 +82,7 @@ Write-Host "Image '$ImageName' built successfully."
 
 # Login to GitHub Container Registry
 Write-Host "Logging in to ghcr.io..."
-$githubToken | docker login ghcr.io -u official-ewe --password-stdin
+$githubToken | docker login ghcr.io -u surimi-project --password-stdin
 
 if ($LASTEXITCODE -ne 0) {
     Write-Error "Docker login failed (exit $LASTEXITCODE)"
